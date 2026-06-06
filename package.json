@@ -1,0 +1,16 @@
+{
+  "name": "terramate",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@google/adk-devtools": "1.2.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "6"
+  },
+  "dependencies": {
+    "@google/adk": "1.2.0"
+  }
+}
