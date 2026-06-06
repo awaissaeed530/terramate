@@ -1,6 +1,9 @@
 import { Agent } from '@mastra/core/agent'
 import { Memory } from '@mastra/memory'
+import { gitlabMcpClient } from "../mcp/gitlab.ts";
 import { weatherTool } from '../tools/weather-tool'
+
+const gitlabTools = await gitlabMcpClient.listTools();
 
 export const weatherAgent = new Agent({
     id: 'weather-agent',
@@ -18,7 +21,7 @@ export const weatherAgent = new Agent({
       Use the weatherTool to fetch current weather data.
 `,
     model: 'openrouter/openrouter/free',
-    tools: {weatherTool},
+    tools: {weatherTool, gitlabTools},
     memory: new Memory({
         options: {
             observationalMemory: {
